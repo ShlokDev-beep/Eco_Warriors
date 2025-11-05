@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useMemo } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
-import { Sky, Stars, Fog } from '@react-three/drei';
+import { Sky, Stars } from '@react-three/drei';
 import { Physics } from '@react-three/rapier';
 import * as THREE from 'three';
 import { ForestScene } from '../scenes/ForestScene';
@@ -165,13 +165,7 @@ export function GameEngine({ currentScene, onSceneChange }) {
         color={currentSceneConfig?.sunColor || '#FFD700'}
       />
 
-      {/* Scene-specific fog */}
-      {currentSceneConfig && (
-        <Fog
-          attach="fog"
-          args={[currentSceneConfig.fogColor, currentSceneConfig.fogNear, currentSceneConfig.fogFar]}
-        />
-      )}
+          {/* Scene-specific fog is now handled in scene.fog property */}
 
       {/* Physics World */}
       <Physics
