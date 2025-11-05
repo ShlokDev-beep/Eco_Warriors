@@ -277,6 +277,7 @@ class PerformanceOptimizer {
 }
 
 // Export singleton instance
-export const PerformanceOptimizer = PerformanceOptimizer.getInstance();
+const performanceOptimizerInstance = PerformanceOptimizer.getInstance();
 
+export { performanceOptimizerInstance as PerformanceOptimizer };
 export default PerformanceOptimizer;
