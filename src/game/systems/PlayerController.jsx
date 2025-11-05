@@ -1,12 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
-import { CapsuleCollider, RigidBody, useCharacterController } from '@react-three/rapier';
+import { CapsuleCollider, RigidBody } from '@react-three/rapier';
 import { useGameStore, usePlayerStore } from '../../store/gameStore';
 import * as THREE from 'three';
 
 export function PlayerController() {
   const { camera, gl } = useThree();
-  const characterController = useCharacterController();
+  const rigidBodyRef = useRef();
 
   // Store references
   const playerRef = useRef();
