@@ -165,13 +165,7 @@ export function GameEngine({ currentScene, onSceneChange }) {
         color={currentSceneConfig?.sunColor || '#FFD700'}
       />
 
-      {/* Scene-specific fog */}
-      {currentSceneConfig && (
-        <Fog
-          attach="fog"
-          args={[currentSceneConfig.fogColor, currentSceneConfig.fogNear, currentSceneConfig.fogFar]}
-        />
-      )}
+          {/* Scene-specific fog is now handled in scene.fog property */}
 
       {/* Physics World */}
       <Physics
