@@ -88,13 +88,14 @@ src/
 
 ## 🛠️ Technology Stack
 
-- **Frontend**: React 18 + Three.js + React Three Fiber
-- **Physics**: React Three Rapier
-- **Build Tool**: Vite
-- **State Management**: Zustand with persistence
+- **Frontend**: React 19 + Three.js v0.181 + React Three Fiber v9.4
+- **Physics**: React Three Rapier v2.2
+- **Build Tool**: Vite v7.2 with optimized chunking
+- **State Management**: Zustand v5.0.8 with persistence
 - **Styling**: CSS with custom design system
 - **Audio**: Web Audio API with procedural sound generation
-- **Performance**: Adaptive quality optimization
+- **Performance**: Adaptive quality optimization with LOD system
+- **PWA**: Progressive Web App with offline caching
 
 ## 🎮 Controls
 
