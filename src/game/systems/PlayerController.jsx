@@ -139,20 +139,12 @@ export function PlayerController() {
     };
   }, [gl, updatePlayerRotation]);
 
-  // Handle character controller setup
-  useEffect(() => {
-    if (characterController && playerRef.current) {
-      characterController.setCharacterController(playerRef.current);
-    }
-  }, [characterController]);
-
   // Update movement based on input
   useFrame((state, delta) => {
-    if (!playerRef.current || !characterController) return;
+    if (!rigidBodyRef.current) return;
 
     const movement = movementRef.current;
     const speed = movement.run ? MOVEMENT_SPEED.run : MOVEMENT_SPEED.walk;
-    setCurrentSpeed(speed);
 
     // Calculate movement direction
     let moveX = 0;
@@ -182,34 +174,23 @@ export function PlayerController() {
 
     // Calculate movement vector
     const movementVector = new THREE.Vector3();
-    movementVector.addScaledVector(cameraDirection, moveZ * speed * delta);
-    movementVector.addScaledVector(rightVector, moveX * speed * delta);
+    movementVector.addScaledVector(cameraDirection, moveZ * speed);
+    movementVector.addScaledVector(rightVector, moveX * speed);
 
-    // Apply movement
+    // Apply movement force
     if (movementVector.length() > 0) {
-      characterController.move(movementVector);
+      rigidBodyRef.current.addForce(movementVector, true);
     }
 
     // Handle jumping
     if (movement.jump && isGrounded) {
-      characterController.jump({ impulse: { x: 0, y: MOVEMENT_SPEED.jump, z: 0 } });
+      rigidBodyRef.current.addImpulse({ x: 0, y: MOVEMENT_SPEED.jump, z: 0 }, true);
       setIsGrounded(false);
     }
 
-    // Check if grounded
-    const groundCheck = characterController.groundIntersections();
-    setIsGrounded(groundCheck.length > 0);
-
     // Update player position in store
-    const position = playerRef.current.translation();
+    const position = rigidBodyRef.current.translation();
     updatePlayerPosition([position.x, position.y, position.z]);
-
-    // Update action state
-    if (moveX !== 0 || moveZ !== 0) {
-      movement.currentAction = movement.run ? 'running' : 'walking';
-    } else {
-      movement.currentAction = 'idle';
-    }
   });
 
   return (
