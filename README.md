@@ -156,6 +156,55 @@ This is a demonstration implementation of the Eco Warriors concept. The codebase
 
 This project is created for educational and demonstration purposes.
 
+## 📝 Changelog
+
+### Version 0.1.1 - Latest Updates (2025-11-05)
+
+#### 🚀 Major Dependency Updates
+- **React**: Upgraded from 18.2.0 → 19.2.0
+  - Removed `React.StrictMode` (deprecated in React 19)
+  - Updated main.jsx to use new createRoot API
+  - Improved performance and developer experience
+- **Three.js**: Upgraded from 0.158.0 → 0.181.0
+  - Latest rendering optimizations and bug fixes
+  - Enhanced WebGL performance and compatibility
+- **React Three Fiber**: Upgraded from 8.15.11 → 9.4.0
+  - Improved hooks and rendering pipeline
+  - Better performance for complex 3D scenes
+- **React Three Drei**: Upgraded from 9.88.13 → 10.7.6
+  - New utility components and helpers
+  - Enhanced accessibility and performance
+- **Zustand**: Upgraded from 4.4.7 → 5.0.8
+  - Improved state management performance
+  - Enhanced TypeScript support
+- **Vite**: Upgraded from 5.0.8 → 7.2.0
+  - Faster development server and builds
+  - Enhanced optimization and plugin system
+
+#### ⚡ Performance Improvements
+- **Enhanced Build Configuration**:
+  - Optimized code splitting for better loading performance
+  - Improved chunking strategy for 3D assets
+  - Better dependency optimization
+- **PWA Enhancements**:
+  - Improved caching strategies for 3D assets
+  - Better offline support
+  - Enhanced service worker configuration
+
+#### 🛠️ Code Quality
+- Updated configuration files for latest versions
+- Improved development experience with hot module replacement
+- Better error handling and debugging capabilities
+- Enhanced TypeScript support (where applicable)
+
+#### 🔧 Technical Improvements
+- **React 19 Compatibility**: Updated all React patterns to work with the latest version
+- **Modern Build Pipeline**: Leveraging latest Vite features for optimal performance
+- **Better Asset Management**: Improved handling of 3D models and textures
+- **Enhanced Development Tools**: Better debugging and development workflow
+
+---
+
 ## 🙏 Acknowledgments
 
-Built with modern web technologies to promote environmental awareness and education through interactive gaming.
+Built with the latest modern web technologies (React 19, Three.js 0.181, Vite 7.2) to promote environmental awareness and education through interactive gaming.
