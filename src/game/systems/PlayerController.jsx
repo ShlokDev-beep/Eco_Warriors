@@ -195,7 +195,7 @@ export function PlayerController() {
 
   return (
     <RigidBody
-      ref={playerRef}
+      ref={rigidBodyRef}
       type="dynamic"
       position={[0, 5, 0]}
       enabledRotations={[false, false, false]}
