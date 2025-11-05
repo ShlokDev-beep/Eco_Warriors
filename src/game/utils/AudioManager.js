@@ -314,6 +314,7 @@ class AudioManager {
 }
 
 // Export singleton instance
-export const AudioManager = AudioManager.getInstance();
+const audioManagerInstance = AudioManager.getInstance();
 
+export { audioManagerInstance as AudioManager };
 export default AudioManager;
