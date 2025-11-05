@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useMemo } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import { Sky, Stars, Fog } from '@react-three/drei';
 import { Physics } from '@react-three/rapier';
+import * as THREE from 'three';
 import { ForestScene } from '../scenes/ForestScene';
 import { OceanScene } from '../scenes/OceanScene';
 import { MountainScene } from '../scenes/MountainScene';
