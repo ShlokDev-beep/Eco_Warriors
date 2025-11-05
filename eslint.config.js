@@ -12,7 +12,11 @@ export default [
     files: ['**/*.{js,jsx}'],
     languageOptions: {
       ecmaVersion: 2024,
-      globals: globals.browser,
+      globals: {
+        ...globals.browser,
+        THREE: 'readonly',
+        process: 'readonly'
+      },
       parserOptions: {
         ecmaFeatures: {
           jsx: true
@@ -34,7 +38,12 @@ export default [
         { allowConstantExport: true },
       ],
       'react/react-in-jsx-scope': 'off',
-      'react/prop-types': 'off'
+      'react/prop-types': 'off',
+      'react/no-unknown-property': 'off',
+      'react-hooks/purity': 'warn',
+      'react-hooks/immutability': 'warn',
+      'no-unused-vars': 'warn',
+      'no-undef': 'error'
     },
     settings: {
       react: {
